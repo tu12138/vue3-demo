@@ -1,41 +1,18 @@
 <template>
-	<el-drawer
-		v-model="drawer"
-		class="drawer"
-		title="查看详情"
-		direction="rtl"
-		:before-close="handleClose"
-		:size="1000"
-	>
+	<el-drawer v-model="drawer" class="drawer" title="查看详情" direction="rtl" :before-close="handleClose" :size="1000">
 		<el-scrollbar>
-			<el-table
-				:data="state.tableData"
-				style="width: 100%"
-				:span-method="objectSpanMethod"
-				border
-			>
+			<el-table :data="state.tableData" style="width: 100%" :span-method="objectSpanMethod" border>
 				<el-table-column prop="id" label="ID" width="50" fixed />
 				<el-table-column prop="sku_id" label="sku_id" width="80" fixed />
 				<el-table-column label="Avatar" width="80" fixed>
 					<template #default="scope">
 						<div>
-							<el-image
-								style="width: 50px; height: 50px"
-								:src="scope.row.img_path"
-								:zoom-rate="1.2"
-								:preview-src-list="[scope.row.img_path]"
-								fit="cover"
-								preview-teleported
-							/>
+							<el-image style="width: 50px; height: 50px" :src="scope.row.img_path" :zoom-rate="1.2"
+								:preview-src-list="[scope.row.img_path]" fit="cover" preview-teleported />
 						</div>
 					</template>
 				</el-table-column>
-				<el-table-column
-					prop="img_path"
-					label="avatar_url"
-					min-width="250"
-					show-overflow-tooltip
-				/>
+				<el-table-column prop="img_path" label="avatar_url" min-width="250" show-overflow-tooltip />
 				<el-table-column prop="date" label="Date" width="100" />
 				<el-table-column prop="name" label="Name" width="100" />
 				<el-table-column prop="rowspan" label="rowspan" width="100" />
@@ -43,20 +20,13 @@
 				<el-table-column prop="address" label="Address" min-width="250" />
 				<el-table-column fixed="right" label="Operations" width="150">
 					<template #default="scope">
-						<el-button
-							size="small"
-							type="primary"
-							@click="copy(scope.row.img_path)"
-							>Copy</el-button
-						>
+						<el-button size="small" type="primary" @click="copy(scope.row.img_path)">Copy</el-button>
 						<el-button size="small" type="warning">Edit</el-button>
 					</template>
 				</el-table-column>
 			</el-table>
 		</el-scrollbar>
 	</el-drawer>
-
-	
 </template>
 
 <script lang="ts" setup>
@@ -67,7 +37,7 @@ import copy from "@/utils/copy";
 const state = ref({
 	tableData: [],
 	srcList: [],
-    dialogVisible: false
+	// dialogVisible: false
 });
 
 const drawer = ref<boolean>(false);
