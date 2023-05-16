@@ -1,0 +1,1 @@
+import{a as s}from"./axios.77c802c4.js";const t=s.create({baseURL:"",timeout:3e3,headers:{"Content-Type":"application/json;charset=utf-8"}});t.interceptors.request.use(e=>(e.headers=e.headers||{},sessionStorage.getItem("token"),e));t.interceptors.response.use(e=>{const r=e.data.code;return r!==200?(MSGS[r],Promise.reject(e)):e},e=>e);const a=t;export{a as h};
