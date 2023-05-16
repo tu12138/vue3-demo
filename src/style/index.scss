@@ -1,0 +1,59 @@
+@import './main.css';
+@import './base.css';
+
+.main-height {
+    height: calc(100vh - 50px);
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+// margin
+.m-lr-5 {
+    margin: 0 5px;
+}
+
+.m-lr-10 {
+    margin: 0 10px;
+}
+
+// padding
+.p-20 {
+    padding: 20px;
+}
+
+// color 
+.logo-color {
+    color: #589CFD;
+}
+
+.cfff {
+    color: #fff;
+}
+
+// font-size
+.f-16 {
+    font-size: 16px;
+}
+
+.f-24 {
+    font-size: 24px;
+}
+
+
+.pointer {
+    cursor: pointer;
+}
